@@ -1,0 +1,22 @@
+{
+  "name": "Alpine.js TodoMVC",
+  "description": "TodoMVC implementation using Alpine.js",
+  "homepage": "https://alpinejs.dev/",
+  "examples": [
+    {
+      "name": "Example",
+      "url": "index.html"
+    }
+  ],
+  "link_groups": [
+    {
+      "heading": "Official Resources",
+      "links": [
+        {
+          "name": "Alpine.js Documentation",
+          "url": "https://alpinejs.dev/"
+        }
+      ]
+    }
+  ]
+}
