@@ -24,9 +24,16 @@ window.todos = function () {
             }[this.filter];
         },
 
+        get allComplete() {
+            return this.todos.length > 0 && this.todos.every(todo => todo.completed);
+        },
+
         addTodo() {
+            if(!this.newTodo) {
+                return;
+            }
             this.todos.push({
-                id: this.todos.length + 1,
+                id: Date.now(),
                 body: this.newTodo,
                 completed: false
             });
@@ -52,12 +59,18 @@ window.todos = function () {
                 return this.deleteTodo(todo);
             }
 
-            this.editedTodo =null
+            this.editedTodo = null;
         },
 
         deleteTodo(todo) {
             let position = this.todos.indexOf(todo);
             this.todos.splice(position, 1);
+        },
+
+        toggleAllTodos() {
+            let allComplete = this.allComplete;
+
+            this.todos.forEach(todo => todo.completed = !allComplete);
         }
     }
 }
